@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "412624561473",
+    "firebase_url": "https://oamk-kiertotalous-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "oamk-kiertotalous",
+    "storage_bucket": "oamk-kiertotalous.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412624561473:android:91cf173f1e2ead077dadc0",
+        "android_client_info": {
+          "package_name": "com.oamk.kiertokaari"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "412624561473-5hgnrrbjr4lcuhm3bmf8bdkcreretakn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCxkCddeF26XHmN9ns9-lZu65P6WmWa2A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "412624561473-5hgnrrbjr4lcuhm3bmf8bdkcreretakn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412624561473:android:ed338b31007801ff7dadc0",
+        "android_client_info": {
+          "package_name": "com.oamk.kiertotalous"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "412624561473-0imp307qp18sskrco9iq9ebt3oosgdkk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.oamk.kiertotalous",
+            "certificate_hash": "bbe6fbf2a53061cbe3c8b9759b10ada027f7421f"
+          }
+        },
+        {
+          "client_id": "412624561473-5hgnrrbjr4lcuhm3bmf8bdkcreretakn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCxkCddeF26XHmN9ns9-lZu65P6WmWa2A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "412624561473-5hgnrrbjr4lcuhm3bmf8bdkcreretakn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
