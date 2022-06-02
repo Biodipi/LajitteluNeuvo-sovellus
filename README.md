@@ -38,5 +38,5 @@ Käyttäjällä on mahdollista antaa palautetta sovelluksen toiminnasta esineide
 
 ## Sovelluksen toteutuksessa käytetyt tekniikat
 
-Flutter
-Firebase
+Sovellus on toteutettu [Flutterilla](https://flutter.dev). Palautteet tallennetaan [Firebaseen](https://firebase.google.com). Demossa jätteiden tiedot haetaan [Kiertokaaren](https://kiertokaari.fi) web-sivuilta verkkoharavointi (web scraper)-tekniikalla.
+
