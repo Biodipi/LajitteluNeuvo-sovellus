@@ -12,11 +12,11 @@ Valitsemalla listalta esineen voi tarkastella esineen tietoja. Esineestä näyte
 
 ![Tulos](https://github.com/Biodibi/hyotyjate/blob/master/images/tulos.png)
 
-Painamalla lisätietoa-painiketta voi tarkastella esineen lisätietoja.
+Painamalla Lisätietoa-painiketta voi tarkastella esineen lisätietoja.
 
 ![Lisätietoa](https://github.com/Biodibi/hyotyjate/blob/master/images/lisatietoa.png)
 
-Painamalla Lisää tuotelistaan painiketta tuote lisätään listalle, jonka mukaiset esineet käyttäjä aikoo palauttaa hyötyjätteiden lajitteluasemalle.
+Painamalla Lisää tuotelistaan -painiketta tuote lisätään listalle, jonka mukaiset esineet käyttäjä aikoo palauttaa hyötyjätteiden lajitteluasemalle.
 
 ![Listaus](https://github.com/Biodibi/hyotyjate/blob/master/images/lista.png)
 
