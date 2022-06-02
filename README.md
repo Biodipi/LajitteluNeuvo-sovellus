@@ -40,3 +40,7 @@ Käyttäjällä on mahdollista antaa palautetta sovelluksen toiminnasta esineide
 
 Sovellus on toteutettu [Flutterilla](https://flutter.dev). Palautteet tallennetaan [Firebaseen](https://firebase.google.com). Demossa jätteiden tiedot haetaan [Kiertokaaren](https://kiertokaari.fi) web-sivuilta verkkoharavointi (web scraper)-tekniikalla.
 
+## Lisenssi
+
+Tämän projektin lähdekoodi on lisenssoitu MIT-lisenssillä. Katso lisenssin tiedot tarkemmin [LICENSE](https://github.com/Biodibi/hyotyjate/blob/master/LICENSE.md) tiedostosta. Mikäli sovelluksessa on käytetty kolmannen osapuolen työkaluja, komponentteja tai vastaavia, noudetaan niiden osalta ilmoitettuja lisenssiehtoja
+
