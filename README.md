@@ -1,6 +1,6 @@
 # Hyötyjäte-sovellus
 
-Hyötyjäte-sovelluksen avulla käyttäjät voivat tarkastella kätevästi, mitä jätteitä voi viedä hyötyjätteiden lajitteluasemalle. Sovelluksen avulla on helppo tarkastaa, onko esine vietävissä maksutta lajitteluasemalla vai onko se maksullinen jäte. Erilaisten esineiden jättöpisteet on sijoitettu tietylle paikoille lajitteluasemalla ja sovelluksen avulla käyttäjä voi myös suunnitella esineiden viennin sekä nähdä kartalla selkeästi erilaisten esineiden jättöpisteet. Näin asiakkaat voivat helposti suunnitella ja viedä esineitä hyötyjätteiden lajitteluasemalla ja esineet päätyvät siellä myös oikeille paikoilleen, mikä vähentää myös lajitteluaseman työntekijöiden työmäärää.
+Hyötyjäte-sovelluksen avulla käyttäjät voivat tarkastella kätevästi, mitä jätteitä voi viedä hyötyjätteiden lajitteluasemalle. Sovelluksen avulla on helppo tarkastaa, onko esine vietävissä maksutta lajitteluasemalla vai onko se maksullinen jäte. Erilaisten esineiden jättöpisteet on sijoitettu tietylle paikoille lajitteluasemalla ja sovelluksen avulla käyttäjä voi myös suunnitella esineiden viennin sekä nähdä kartalla selkeästi erilaisten esineiden jättöpisteet. Näin asiakkaat voivat helposti suunnitella ja viedä esineitä hyötyjätteiden lajitteluasemalla, ja esineet päätyvät siellä myös oikeille paikoilleen, mikä vähentää myös lajitteluaseman työntekijöiden työmäärää.
 
 ## Sovelluksen toiminta
 
