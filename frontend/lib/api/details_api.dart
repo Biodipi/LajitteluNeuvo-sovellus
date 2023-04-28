@@ -8,6 +8,16 @@ import 'package:oiva_app_flutter/data/suggestion_model.dart';
 
 class DetailsApi {
   static Future<DetailsModel> fetchItem(String item) async {
+    //debug mock data:
+    //return await DetailsModel(
+    //    false,
+    //     "Käsittelemätön puu haketetaan, minkä jälkeen se hyödynnetään energiana.\n\nPuujäte, jossa ei ole mitään pintakäsittelyä, Käsittelemätön puu haketetaan, minkä jälkeen se hyödynnetään energiana.\n\nPuujäte, jossa ei ole mitään pintakäsittelyä, Käsittelemätön puu haketetaan, minkä jälkeen se hyödynnetään energiana.\n\nPuujäte, jossa ei ole mitään pintakäsittelyä, Käsittelemätön puu haketetaan, minkä jälkeen se hyödynnetään energiana.\n\nPuujäte, jossa ei ole mitään pintakäsittelyä, Käsittelemätön puu haketetaan, minkä jälkeen se hyödynnetään energiana.\n\nPuujäte, jossa ei ole mitään pintakäsittelyä, Käsittelemätön puu haketetaan, minkä jälkeen se hyödynnetään energiana.\n\nPuujäte, jossa ei ole mitään pintakäsittelyä, Käsittelemätön puu haketetaan, minkä jälkeen se hyödynnetään energiana.\n\nPuujäte, jossa ei ole mitään pintakäsittelyä, Käsittelemätön puu haketetaan, minkä jälkeen se hyödynnetään energiana.\n\nPuujäte, jossa ei ole mitään pintakäsittelyä, Käsittelemätön puu haketetaan, minkä jälkeen se hyödynnetään energiana.\n\nPuujäte, jossa ei ole mitään pintakäsittelyä, Käsittelemätön puu haketetaan, minkä jälkeen se hyödynnetään energiana.\n\nPuujäte, jossa ei ole mitään pintakäsittelyä, Käsittelemätön puu haketetaan, minkä jälkeen se hyödynnetään energiana.\n\nPuujäte, jossa ei ole mitään pintakäsittelyä, esim. maalia, otetaan maksutta vastaan. Naulat eivät haittaa \nHuom! Lämpökäsitellyssä puussa ei ole käytetty kemikaaleja, joten se voidaan ottaa vastaan maksutta Oivapisteelle.",
+    //    "pienelektroniikka",
+    //    11,
+    //    true,
+    //    "mock");
+    //
+
     final response =
         await http.get(Uri.parse(baseURL + detailsApiEndpoint + item));
     print(baseURL + detailsApiEndpoint + item);

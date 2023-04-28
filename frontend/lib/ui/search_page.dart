@@ -305,6 +305,39 @@ class _SearchPageState extends State<SearchPage> with TickerProviderStateMixin {
                         Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
+                            Transform.scale(
+                              scale: 0.8,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                    "assets/image/1_oamk.png",
+                                    width: 86,
+                                  ),
+                                  const SizedBox(
+                                    width: 2,
+                                  ),
+                                  Image.asset(
+                                    "assets/image/2_vipuvoimaa.png",
+                                    width: 70,
+                                  ),
+                                  const SizedBox(
+                                    width: 9,
+                                  ),
+                                  Image.asset(
+                                    "assets/image/3_EU.png",
+                                    width: 60,
+                                  ),
+                                  const SizedBox(
+                                    width: 12,
+                                  ),
+                                  Image.asset(
+                                    "assets/image/4_pohjois-pohjanmaa.png",
+                                    width: 70,
+                                  ),
+                                ],
+                              ),
+                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
@@ -667,92 +700,95 @@ class _SearchPageState extends State<SearchPage> with TickerProviderStateMixin {
                   height: 80,
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(20, 20, 10, 0),
-                    child: TypeAheadField(
-                      hideOnLoading: false,
-                      hideSuggestionsOnKeyboardHide: true,
-                      hideOnEmpty: false,
-                      hideOnError: true,
-                      textFieldConfiguration: TextFieldConfiguration(
-                        onTap: () {
-                          if (!_isLoading) {
-                            _pageController.jumpToPage(0);
-                            _textEditingController.text = "";
+                    child: SingleChildScrollView(
+                      physics: const NeverScrollableScrollPhysics(), //
+                      child: TypeAheadField(
+                        hideOnLoading: false,
+                        hideSuggestionsOnKeyboardHide: true,
+                        hideOnEmpty: false,
+                        hideOnError: true,
+                        textFieldConfiguration: TextFieldConfiguration(
+                          onTap: () {
+                            if (!_isLoading) {
+                              _pageController.jumpToPage(0);
+                              _textEditingController.text = "";
+                            }
+                          },
+                          controller: _textEditingController,
+                          autofocus: false,
+                          style: AppFonts.regular(18),
+                          decoration: InputDecoration(
+                              contentPadding:
+                                  const EdgeInsets.fromLTRB(70, 20, 50, 0),
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      color: AppColors.defaultForeground,
+                                      width: defaultBorderWidth),
+                                  borderRadius: BorderRadius.circular(200.0)),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      color: AppColors.defaultForeground,
+                                      width: defaultBorderWidth),
+                                  borderRadius: BorderRadius.circular(200.0)),
+                              filled: true,
+                              hintStyle:
+                                  AppFonts.regular(18, color: AppColors.gray),
+                              hintText: AppLocalizations.of(context)
+                                  .searchInputPlaceholder,
+                              fillColor: AppColors.white),
+                        ),
+                        suggestionsCallback: (pattern) async {
+                          if (pattern.isNotEmpty) {
+                            List<SuggestionModel> suggestions =
+                                await SuggestionsApi.fetchSuggestions(pattern);
+                            if (suggestions == null) {
+                              showError("ERR_FETCH_SEARCH");
+                            }
+                            return suggestions;
+                          } else {
+                            List<SuggestionModel> suggestions =
+                                await SuggestionsApi.fetchSuggestions("aa");
+                            if (suggestions == null) {
+                              showError("ERR_FETCH_SEARCH");
+                            }
+                            return suggestions;
                           }
                         },
-                        controller: _textEditingController,
-                        autofocus: false,
-                        style: AppFonts.regular(18),
-                        decoration: InputDecoration(
-                            contentPadding:
-                                const EdgeInsets.fromLTRB(70, 20, 50, 0),
-                            enabledBorder: OutlineInputBorder(
+                        noItemsFoundBuilder: (context) {
+                          return Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Text(
+                                AppLocalizations.of(context).searchNoResults),
+                          );
+                        },
+                        loadingBuilder: (context) {
+                          return Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Text(AppLocalizations.of(context).searching),
+                          );
+                        },
+                        suggestionsBoxDecoration: SuggestionsBoxDecoration(
+                            color: AppColors.cyan,
+                            hasScrollbar: false,
+                            shape: OutlineInputBorder(
                                 borderSide: const BorderSide(
-                                    color: AppColors.defaultForeground,
+                                    color: AppColors.cyan,
                                     width: defaultBorderWidth),
-                                borderRadius: BorderRadius.circular(200.0)),
-                            focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: AppColors.defaultForeground,
-                                    width: defaultBorderWidth),
-                                borderRadius: BorderRadius.circular(200.0)),
-                            filled: true,
-                            hintStyle:
-                                AppFonts.regular(18, color: AppColors.gray),
-                            hintText: AppLocalizations.of(context)
-                                .searchInputPlaceholder,
-                            fillColor: AppColors.white),
+                                borderRadius: BorderRadius.circular(26.0)),
+                            elevation: 0),
+                        itemBuilder: (context, suggestion) {
+                          return ListTile(
+                            contentPadding: const EdgeInsets.only(left: 20),
+                            textColor: AppColors.navy,
+                            title: Text(suggestion.title,
+                                style: AppFonts.regular(18)),
+                          );
+                        },
+                        onSuggestionSelected: (suggestion) {
+                          _textEditingController.text = suggestion.title;
+                          _loadItem(suggestion);
+                        },
                       ),
-                      suggestionsCallback: (pattern) async {
-                        if (pattern.isNotEmpty) {
-                          List<SuggestionModel> suggestions =
-                              await SuggestionsApi.fetchSuggestions(pattern);
-                          if (suggestions == null) {
-                            showError("ERR_FETCH_SEARCH");
-                          }
-                          return suggestions;
-                        } else {
-                          List<SuggestionModel> suggestions =
-                              await SuggestionsApi.fetchSuggestions("aa");
-                          if (suggestions == null) {
-                            showError("ERR_FETCH_SEARCH");
-                          }
-                          return suggestions;
-                        }
-                      },
-                      noItemsFoundBuilder: (context) {
-                        return Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Text(
-                              AppLocalizations.of(context).searchNoResults),
-                        );
-                      },
-                      loadingBuilder: (context) {
-                        return Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Text(AppLocalizations.of(context).searching),
-                        );
-                      },
-                      suggestionsBoxDecoration: SuggestionsBoxDecoration(
-                          color: AppColors.cyan,
-                          hasScrollbar: false,
-                          shape: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                  color: AppColors.cyan,
-                                  width: defaultBorderWidth),
-                              borderRadius: BorderRadius.circular(26.0)),
-                          elevation: 0),
-                      itemBuilder: (context, suggestion) {
-                        return ListTile(
-                          contentPadding: const EdgeInsets.only(left: 20),
-                          textColor: AppColors.navy,
-                          title: Text(suggestion.title,
-                              style: AppFonts.regular(18)),
-                        );
-                      },
-                      onSuggestionSelected: (suggestion) {
-                        _textEditingController.text = suggestion.title;
-                        _loadItem(suggestion);
-                      },
                     ),
                   ),
                 ),

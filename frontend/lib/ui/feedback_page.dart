@@ -44,8 +44,8 @@ class FeedbackPage extends StatelessWidget {
                 direction: Axis.horizontal,
                 allowHalfRating: true,
                 itemCount: 5,
-                itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                itemBuilder: (context, _) => Icon(
+                itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+                itemBuilder: (context, _) => const Icon(
                   Icons.star,
                   color: AppColors.defaultForeground,
                 ),
@@ -54,7 +54,7 @@ class FeedbackPage extends StatelessWidget {
                 },
               ),
             ),
-            Divider(),
+            const Divider(),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 18.0),
               child: Text(
@@ -70,8 +70,8 @@ class FeedbackPage extends StatelessWidget {
                 direction: Axis.horizontal,
                 allowHalfRating: true,
                 itemCount: 5,
-                itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                itemBuilder: (context, _) => Icon(
+                itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+                itemBuilder: (context, _) => const Icon(
                   Icons.star,
                   color: AppColors.defaultForeground,
                 ),
@@ -80,7 +80,7 @@ class FeedbackPage extends StatelessWidget {
                 },
               ),
             ),
-            Divider(),
+            const Divider(),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 18.0),
               child: Text(

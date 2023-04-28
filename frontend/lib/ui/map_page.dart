@@ -105,44 +105,64 @@ class _MapPageState extends State<MapPage> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async => false,
-      child: Scaffold(
-          appBar: null,
-          body: RubberBottomSheet(
-            scrollController: _scrollController,
-            lowerLayer: _getMap(),
-            header: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: GestureDetector(
-                behavior: HitTestBehavior.opaque,
-                onTap: () => _controller.expand(),
-                child: Container(
-                  child: Center(
-                    child: Text(
-                      AppLocalizations.of(context).progress +
-                          " (" +
-                          _getPlacedCount().toString() +
-                          "/" +
-                          _sortedCart.length.toString() +
-                          ")",
-                      style: AppFonts.regular(20, color: AppColors.white),
-                    ),
+    return Scaffold(
+        floatingActionButtonLocation: FloatingActionButtonLocation.miniStartTop,
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: AppColors.defaultForeground,
+          onPressed: () {
+            AwesomeDialog(
+                    context: context,
+                    headerAnimationLoop: false,
+                    animType: AnimType.SCALE,
+                    dialogType: DialogType.QUESTION,
+                    body: null,
+                    title: 'Keskeytetäänkö palautus?',
+                    desc:
+                        'Sovellus palaa takaisin tuotelistaan. Tuotteet säilyvät, mutta nykyisen palautuksen eteneminen menetetään.',
+                    btnOkOnPress: () {
+                      Navigator.of(context).pop();
+                    },
+                    btnCancelOnPress: () {},
+                    btnOkText: "Keskeytä",
+                    btnCancelText: "Ei kiitos")
+                .show();
+          },
+          child: const Icon(Icons.arrow_back),
+        ),
+        appBar: null,
+        body: RubberBottomSheet(
+          scrollController: _scrollController,
+          lowerLayer: _getMap(),
+          header: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: () => _controller.expand(),
+              child: Container(
+                child: Center(
+                  child: Text(
+                    AppLocalizations.of(context).progress +
+                        " (" +
+                        _getPlacedCount().toString() +
+                        "/" +
+                        _sortedCart.length.toString() +
+                        ")",
+                    style: AppFonts.regular(20, color: AppColors.white),
                   ),
-                  decoration: BoxDecoration(
-                      boxShadow: [defaultBoxShadow()],
-                      color: AppColors.defaultForeground,
-                      borderRadius: const BorderRadius.vertical(
-                        top: Radius.circular(defaultBorderRadius),
-                      )),
                 ),
+                decoration: BoxDecoration(
+                    boxShadow: [defaultBoxShadow()],
+                    color: AppColors.defaultForeground,
+                    borderRadius: const BorderRadius.vertical(
+                      top: Radius.circular(defaultBorderRadius),
+                    )),
               ),
             ),
-            headerHeight: 50,
-            upperLayer: _getSheet(),
-            animationController: _controller,
-          )),
-    );
+          ),
+          headerHeight: 50,
+          upperLayer: _getSheet(),
+          animationController: _controller,
+        ));
   }
 
   Widget _getMap() {

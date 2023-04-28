@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:412624561473:android:91cf173f1e2ead077dadc0",
         "android_client_info": {
-          "package_name": "com.oamk.kiertokaari"
+          "package_name": "fi.biodipi.lajitteluneuvo"
         }
       },
       "oauth_client": [
@@ -39,7 +39,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:412624561473:android:ed338b31007801ff7dadc0",
         "android_client_info": {
-          "package_name": "com.oamk.kiertotalous"
+          "package_name": "fi.biodipi.lajitteluneuvo"
         }
       },
       "oauth_client": [
